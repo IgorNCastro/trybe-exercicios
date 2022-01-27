@@ -1,0 +1,32 @@
+h1 {
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+  }
+
+  body {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 3em;
+    text-decoration: bisque;
+  }
+
+  .style {
+    background-color: aquamarine;
+  }
+
+  #amarelo {
+    background-color: yellow;
+  }
+
+  #vermelho {
+    background-color: red;
+  }
+
+  #marrom {
+    background-color: brown;
+  }
