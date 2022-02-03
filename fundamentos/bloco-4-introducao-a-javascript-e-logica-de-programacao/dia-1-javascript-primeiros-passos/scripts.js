@@ -66,7 +66,38 @@ else {
 }
 
 // Exercicio 6
+const peao = "Uma casa para frente";
+const torre = "Horizontal ou vertical sem limite";
+const cavalo = "Movimento em L";
+const bispo = "Movimento diagonal sem limites";
+const rainha = "Qualquer lado sem limites";
+const rei = "Qualquer lado mas uma casa por vez";
 
+let pecaXadrez = prompt("Insira o nome de uma peça de xadrez..").toLowerCase();
+
+function retornoPecaXadrez() {
+    if (pecaXadrez === "peao") {
+        console.log(peao);
+    }
+    else if (pecaXadrez === "torre") {
+        console.log(torre);
+    }
+    else if (pecaXadrez === "cavalo") {
+        console.log(cavalo);
+    }
+    else if (pecaXadrez === "bispo") {
+        console.log(bispo);
+    }
+    else if (pecaXadrez === "rainha") {
+        console.log(rainha);
+    }
+    else if (pecaXadrez === "rei") {
+        console.log(rei);
+    }
+    else {
+        console.log("Peça não encontrada!");
+    }
+} return retornoPecaXadrez();
 
 // Exercicio 7
 let nota = 75;
