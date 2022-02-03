@@ -73,31 +73,23 @@ const bispo = "Movimento diagonal sem limites";
 const rainha = "Qualquer lado sem limites";
 const rei = "Qualquer lado mas uma casa por vez";
 
-let pecaXadrez = prompt("Insira o nome de uma peça de xadrez..").toLowerCase();
+let pecaXadrez = "peao";
 
-function retornoPecaXadrez() {
-    if (pecaXadrez === "peao") {
-        console.log(peao);
-    }
-    else if (pecaXadrez === "torre") {
-        console.log(torre);
-    }
-    else if (pecaXadrez === "cavalo") {
-        console.log(cavalo);
-    }
-    else if (pecaXadrez === "bispo") {
-        console.log(bispo);
-    }
-    else if (pecaXadrez === "rainha") {
-        console.log(rainha);
-    }
-    else if (pecaXadrez === "rei") {
-        console.log(rei);
-    }
-    else {
-        console.log("Peça não encontrada!");
-    }
-} return retornoPecaXadrez();
+if (pecaXadrez === "peao") {
+    console.log(peao);
+} else if (pecaXadrez === "torre") {
+    console.log(torre);
+} else if (pecaXadrez === "cavalo") {
+    console.log(cavalo);
+} else if (pecaXadrez === "bispo") {
+    console.log(bispo);
+} else if (pecaXadrez === "rainha") {
+    console.log(rainha);
+} else if (pecaXadrez === "rei") {
+    console.log(rei);
+} else {
+    console.log("Peça não encontrada!");
+}
 
 // Exercicio 7
 let nota = 75;
@@ -159,3 +151,43 @@ let lucro = ((valorVenda - valorCustoTotal) * 1000)
 console.log(lucro)
 
 // Exercicio 11
+let salario = 3500;
+let desconto;
+let salarioInss;
+let descontoIr;
+let salarioLiquido;
+
+if (salario > 0 && salario <= 1556.94) {
+    desconto = ((salario * 1.08) - salario);
+    salarioInss = (salario - desconto);
+} else if (salario > 1556.94 && salario <= 2594.92) {
+    desconto = ((salario * 1.09) - salario);
+    salarioInss = (salario - desconto);
+} else if (salario > 2594.92 && salario <= 5189.82) {
+    desconto = ((salario * 1.11) - salario);
+    salarioInss = (salario - desconto);
+} else if (salario > 5189.82) {
+    salarioInss = (salario - 570.88);
+} 
+
+if (salarioInss > 0 && salarioInss <= 1903.98) {
+    salarioLiquido = salarioInss;
+}
+else if (salarioInss > 1903.98 && salarioInss <= 2826.65) {
+    descontoIr = (((salarioInss * 1.075) - salarioInss) - 142.8);
+    salarioLiquido = (salarioInss - descontoIr);
+}
+else if (salarioInss > 2826.65 && salarioInss <= 3751.05) {
+    descontoIr = (((salarioInss * 1.15) - salarioInss) - 354.8);
+    salarioLiquido = (salarioInss - descontoIr);
+}
+else if (salarioInss > 3751.05 && salarioInss <= 4664.68) {
+    descontoIr = (((salarioInss * 1.225) - salarioInss) - 636.13);
+    salarioLiquido = (salarioInss - descontoIr);
+}
+else if (salarioInss > 4664.68) {
+    descontoIr = (((salarioInss * 1.275) - salarioInss) - 869.36);
+    salarioLiquido = (salarioInss - descontoIr);
+}
+
+console.log(salarioLiquido);
