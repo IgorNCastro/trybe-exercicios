@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let body = document.querySelector('body');
+      // Exercicio 01
+      let ex1 = document.createElement('h1');
+      ex1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      body.appendChild(ex1);
+      // Exercicio 02
+      let ex2 = document.createElement('main');
+      ex2.className = 'main-content';
+      body.appendChild(ex2);
+      // Exercicio 03
+      let ex3 = document.createElement('section');
+      ex3.className = 'center-content';
+      ex2.appendChild(ex3);
+      // Exercicio 04
+      let ex4 = document.createElement('p');
+      ex4.innerText = 'Algum texto aqui';
+      ex3.appendChild(ex4);
+      // Exercicio 05
+      let ex5 = document.createElement('section');
+      ex5.className = 'left-content';
+      ex2.appendChild(ex5);
+      // Exercicio 06
+      let ex6 = document.createElement('section');
+      ex6.className = 'right-content';
+      ex2.appendChild(ex6);
+      // Exercicio 07
+      let ex7 = document.createElement('img');
+      ex7.className = 'small-image';
+      ex7.src = 'https://picsum.photos/200';
+      ex5.appendChild(ex7);
+      //Exercicio 08
+      let ex8 = document.createElement('ul');
+      let array = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      for (index = 0; index < 10; index += 1) {
+          let temp = document.createElement('li');
+          temp.innerText = array[index];
+          ex8.appendChild(temp);
+      };
+      ex6.appendChild(ex8);
+      // Exercicio 09 e Novo 02
+      for (let index = 0; index < 3; index += 1) {
+          let temp2 = document.createElement('h3');
+          temp2.innerText = 'Menu ' + (index + 1);
+          temp2.className = 'description';
+          ex2.appendChild(temp2);
+      };
+      // Exercicio Novo 01
+      ex1.className = 'title';
+      // Exercicio Novo 03
+      ex2.removeChild(ex5);
+      // Exercicio Novo 04
+      ex6.style.marginRight = 'auto';
+      // Exercicio Novo 05
+      ex8.lastChild.remove();
+      ex8.lastChild.remove();
+    </script>
+  </body>
+</html>
