@@ -1,44 +1,37 @@
 function createDaysOfTheWeek() {
     const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
     const weekDaysList = document.querySelector('.week-days');
-  
     for (let index = 0; index < weekDays.length; index += 1) {
       const days = weekDays[index];
       const dayListItem = document.createElement('li');
       dayListItem.innerHTML = days;
-  
       weekDaysList.appendChild(dayListItem);
     };
 };
-  
 createDaysOfTheWeek();
   
 // Escreva seu código abaixo.
 // Exercicio 01
 let dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-
 function createDaysOfTheMonth() {
   let getDaysList = document.querySelector('#days');
-
-  for (let index = 0; index < dezDaysList.length; index += 1) {
-    let day = dezDaysList[index];
+  for (let index of dezDaysList) {
     let dayItem = document.createElement('li');
-
-    if (day === 24 || day === 31) {
+    if (index === 24 || index === 31) {
       dayItem.className = 'day holiday';
-      dayItem.innerHTML = day;
+      dayItem.innerHTML = index;
       getDaysList.appendChild(dayItem);
-    } else if (day === 4 || day === 11 || day === 18) {
+    } else if (index === 4 || index === 11 || index === 18) {
       dayItem.className = 'day friday';
-      dayItem.innerHTML = day;
+      dayItem.innerHTML = index;
       getDaysList.appendChild(dayItem);
-    } else if (day === 25) {
+    } else if (index === 25) {
       dayItem.className = 'day holiday friday';
-      dayItem.innerHTML = day;
+      dayItem.innerHTML = index;
       getDaysList.appendChild(dayItem);
     } else {
-      dayItem.innerHTML = day;
       dayItem.className = 'day';
+      dayItem.innerHTML = index;
       getDaysList.appendChild(dayItem);
     }
   };
@@ -52,6 +45,24 @@ function createButton(string) {
     button.className = 'btn-holiday';
     button.innerHTML = string;
     buttonFather.appendChild(button);
-
 }
 createButton('Feriados');
+
+// Exercicios 03
+function showHoliday() {
+    let dayHoliday = document.querySelectorAll('.holiday');
+    let buttonHoliday = document.querySelector('.btn-holiday');
+    let defaultColor = 'rgb(238,238,238)';
+    let newColor = 'yellow';
+  
+    buttonHoliday.addEventListener('click', function() {
+      for (let index of dayHoliday) {
+        if (index.style.backgroundColor === newColor) {
+            index.style.backgroundColor = defaultColor;
+        } else {
+            index.style.backgroundColor = newColor;
+        }
+      }
+    })
+};
+showHoliday();
