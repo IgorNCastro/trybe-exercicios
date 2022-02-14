@@ -66,3 +66,32 @@ function showHoliday() {
     })
 };
 showHoliday();
+
+// Exercicio 04
+function createButtonFriday(string) {
+    let buttonFather = document.querySelector('.buttons-container');
+    let buttonFriday = document.createElement('button');
+    buttonFriday.className = 'btn-friday';
+    buttonFriday.innerHTML = string;
+    buttonFather.appendChild(buttonFriday);
+}
+createButtonFriday('Sexta-feira');
+
+// Exercicio 05
+function showFriday() {
+    let dezFridays = [ 4, 11, 18, 25 ];
+    let dayFriday = document.querySelectorAll('.friday');
+    let buttonFriday = document.querySelector('.btn-friday');
+    let newText = 'SEXTOU';
+  
+    buttonFriday.addEventListener('click', function() {
+      for (let index in dayFriday) {
+        if (dayFriday[index].innerHTML === newText) {
+            dayFriday[index].innerHTML = dezFridays[index];
+        } else {
+            dayFriday[index].innerHTML = newText;
+        }
+      }
+    })
+};
+showFriday();
