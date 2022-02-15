@@ -95,3 +95,31 @@ function showFriday() {
     })
 };
 showFriday();
+
+// Exercicios 06
+function mouseSelection() {
+    let zoomDay = document.querySelector('#days');
+    zoomDay.addEventListener('mouseover', zoomIn);
+    zoomDay.addEventListener('mouseout', zoomOut);
+}
+
+function zoomIn(event) {
+    event.target.style.fontSize = '30px';
+    event.target.style.fontWeight = '400';
+}
+
+function zoomOut(event) {
+    event.target.style.fontSize = '20px';
+    event.target.style.fontWeight = '200';
+
+}
+mouseSelection();
+
+// Exercicio 07
+function addTask(string) {
+    let taskTable = document.querySelector('.my-tasks');
+    let task = document.createElement('span');
+    task.innerHTML = string;
+    taskTable.appendChild(task);
+}
+addTask('Trabalho voluntário');
