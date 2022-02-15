@@ -119,7 +119,19 @@ mouseSelection();
 function addTask(string) {
     let taskTable = document.querySelector('.my-tasks');
     let task = document.createElement('span');
+    let taskSeparation = document.createElement('p');
     task.innerHTML = string;
     taskTable.appendChild(task);
+    taskTable.appendChild(taskSeparation);
 }
 addTask('Trabalho voluntário');
+
+// Exercicios 08
+function legend(color) {
+    let tasksLegend = document.querySelector('.my-tasks');
+    let legendLine = document.createElement('div');
+    legendLine.className = 'task';
+    legendLine.style.backgroundColor = color;
+    tasksLegend.appendChild(legendLine);
+}
+legend('red');
