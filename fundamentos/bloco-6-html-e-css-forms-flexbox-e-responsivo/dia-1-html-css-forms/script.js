@@ -1,3 +1,5 @@
+const validation = new JustValidate('#form');
+
 window.onload = function () {
   const clearBtn = document.querySelector('#erase-button');
   clearBtn.addEventListener('click', clearFields);
@@ -7,7 +9,7 @@ window.onload = function () {
 
 
 function buttonSubmit(event) {
-  event.preventDefault();
+  //event.preventDefault();
 }
 
 function clearFields() {
@@ -20,3 +22,58 @@ function clearFields() {
   }
   textArea.value = '';
 }
+
+validation
+  .addField('#name', [
+    {
+      rule: 'minLength',
+      value: 5,
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Name is required',
+    },
+  ])
+  .addField('#email', [
+    {
+      rule: 'required',
+      errorMessage: 'Email is required',
+    },
+    {
+      rule: 'email',
+      errorMessage: 'Email is invalid!',
+    },
+  ])
+  .addField('#why', [
+    {
+      rule: 'minLength',
+      value: 30,
+    },
+    {
+      rule: 'maxLength',
+      value: 300,
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Reasons is required',
+    },
+  ])
+  .addField('#agreement', [
+    {
+      rule: 'required',
+      errorMessage: 'Agreement is required',
+    },
+  ])
+  .addRequiredGroup('#checkbox_group',
+    'You should select at least one option'
+  )
+  .addField('#date', [
+    {
+      rule: 'required',
+      errorMessage: 'Date is required',
+    },
+  ])

@@ -1,0 +1,15 @@
+body {
+  margin: 30px;
+}
+
+section {
+  margin: 20px;
+}
+
+.form-check-input {
+  margin-left: 20px;
+}
+
+.check {
+  margin-left: 0px;
+}
